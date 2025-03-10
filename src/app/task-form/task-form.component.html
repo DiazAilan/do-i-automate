@@ -1,0 +1,32 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="time">Time:</label>
+    <input 
+      id="time" 
+      type="string" 
+      formControlName="time" 
+      class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="repetitions">Number of Repetitions:</label>
+    <input 
+      id="repetitions" 
+      type="number" 
+      formControlName="repetitions" 
+      class="form-control"
+      min="1">
+  </div>
+
+  <div class="form-group">
+    <label for="duration">Duration:</label>
+    <input 
+      id="duration" 
+      type="string" 
+      formControlName="duration" 
+      class="form-control"
+      step="1">
+  </div>
+
+  <button type="submit" [disabled]="!taskForm.valid">Submit</button>
+</form>
